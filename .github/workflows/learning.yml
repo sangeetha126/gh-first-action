@@ -1,0 +1,28 @@
+name : MyLearningWorkFlow
+on:
+  - workflow_dispatch
+  - push
+jobs:
+    setup:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Set up environment
+          run: echo "Setting up the environment..."
+        
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Build Code
+          run: echo "Building the code..."
+    test:
+        runs-on: ubuntu-latest
+        needs: build
+        steps: 
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Run Tests
+          run: echo "Running tests..."
