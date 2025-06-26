@@ -2,6 +2,9 @@ name : MyLearningWorkFlow
 on:
   - workflow_dispatch
   - push
+env:
+  MY_ENV_VAR: "Hello, World!"
+  MY_ENV_VAR2: "Learning GitHub Actions"
 jobs:
     setup:
         runs-on: ubuntu-latest
@@ -9,7 +12,9 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
         - name: Set up environment
-          run: echo "Setting up the environment..."
+          run: |
+            echo "Setting up the environment..."
+            echo "MY_ENV_VAR is $MY_ENV_VAR"
         
     build:
         runs-on: ubuntu-latest
@@ -18,7 +23,9 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
         - name: Build Code
-          run: echo "Building the code..."
+          run: |
+           echo "Building the code..."
+           # echo " UserName is ${{secrets.USERNAME}}" 
     test:
         runs-on: ubuntu-latest
         needs: build
