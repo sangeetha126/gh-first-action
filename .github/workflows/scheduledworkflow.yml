@@ -1,0 +1,16 @@
+name: Scheduled WorkFlow
+on:
+  schedule:
+    - cron: '23 23 * * *' # Runs every day at 7.23PM EST or 23:23 UTC
+  workflow_dispatch:    # Allows manual triggering of the workflow
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+    steps:      
+      - name: Print greeting
+        run: |
+         echo "Hello, this is a scheduled workflow!"
+         echo "This workflow runs daily at 7:23 PM EST."
+         echo "You can also trigger it manually using workflow_dispatch."
+        
+      
