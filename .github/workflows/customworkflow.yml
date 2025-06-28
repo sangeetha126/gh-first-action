@@ -14,8 +14,8 @@ jobs:
       - name: Print greeting
         run: echo "Hello, this is a custom workflow!"
 
-    #   - name: Make script executable
-    #     run: chmod +x ./custom_script.sh
+      - name: Make script executable
+        run: chmod +x ./custom_script.sh
   
       - name: Run a custom script
         run: ./customscript.sh
