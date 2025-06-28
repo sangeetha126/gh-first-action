@@ -1,7 +1,7 @@
 name : MyLearningWorkFlow
 on:
   - workflow_dispatch
-  - push
+#   - push
 env:
   MY_ENV_VAR: "Hello, World!"
   MY_ENV_VAR2: "Learning GitHub Actions"

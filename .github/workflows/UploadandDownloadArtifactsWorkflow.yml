@@ -1,9 +1,9 @@
 name: Upload and Download Artifacts Workflow
 on:  
  workflow_dispatch:  # Allows manual triggering of the workflow
- push:
-    branches:
-      - main
+#  push:
+#     branches:
+#       - main
 jobs:
   upload_artifact:
     runs-on: ubuntu-latest

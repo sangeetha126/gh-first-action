@@ -1,9 +1,9 @@
  name: Matrix Workflow
  on:
     workflow_dispatch:
-    push:
-      branches:
-         - main
+    # push:
+    #   branches:
+    #      - main
  jobs:
   matrix_job:
     runs-on: ${{ matrix.os }}
