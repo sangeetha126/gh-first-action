@@ -1,0 +1,35 @@
+name: Upload and Download Artifacts Workflow
+on:  
+ workflow_dispatch:  # Allows manual triggering of the workflow
+ push:
+    branches:
+      - main
+jobs:
+  upload_artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create a file to upload
+        run: echo "This is a sample file to upload." > sample.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-file
+          path: sample.txt
+  download_artifact:  
+    runs-on: ubuntu-latest
+    needs: upload_artifact
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: sample-file        
+
+      - name: Display downloaded file
+        run: cat sample.txt
