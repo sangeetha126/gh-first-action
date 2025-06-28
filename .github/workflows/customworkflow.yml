@@ -15,7 +15,7 @@ jobs:
         run: echo "Hello, this is a custom workflow!"
 
       - name: Make script executable
-        run: chmod +x ./custom_script.sh
+        run: chmod +x ./customscript.sh
   
       - name: Run a custom script
         run: ./customscript.sh
