@@ -1,7 +1,7 @@
 name: Scheduled WorkFlow
 on:
-  schedule:
-    - cron: '23 23 * * *' # Runs every day at 7.23PM EST or 23:23 UTC
+#   schedule:
+#     - cron: '23 23 * * *' # Runs every day at 7.23PM EST or 23:23 UTC
   workflow_dispatch:    # Allows manual triggering of the workflow
 jobs:
   reminder:
